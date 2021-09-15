@@ -1,0 +1,171 @@
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reva University | Database</title>
+  <link rel="icon" href="/static/images/revapng.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    td{
+      text-align: center;
+    }
+
+    .a1{
+      border-radius: 5px;
+      border-width: 1px;
+    }
+
+    .b1{
+      font-weight: bold;
+      background-color: #f580266e;
+      color:rgb(26, 126, 207);
+      font-family: sans-serif;
+      text-align: center;
+      border-radius: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: none;
+    }
+    
+    .b1:hover{
+      background-color: cornsilk;
+      color: rgba(0, 0, 139, 0.603);
+    }
+
+    header {
+      text-align: center;
+      background-color:rgba(255, 255, 255, 0.700);
+    }
+
+    header h1 {
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      color:#f57f26;
+    }
+      
+    marquee { 
+      width:80% 
+    }
+
+    header img{
+      padding-left: 5px;
+      float: left;
+    }
+    .content-table{
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      min-width: 800px;
+      min-height: 250px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+    }
+
+    .content-table thead tr{
+      background-color: #f58026e0;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .content-table th,
+    .content-table td{
+      padding: 12px 15px;
+    }
+
+    .content-table tbody tr{
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .content-table tbody tr:nth-of-type(even){
+      background-color: #f3f3f3;
+    }
+
+    .content-table tbody tr:last-of-type{
+      border-bottom: 2px solid #f58026e0;
+    }
+
+  </style>
+</head>
+
+<body bgcolor="white">
+  <header>
+    <img src="/static/Images/revaheader.png" alt="Poor Connection.." style="width:12%;">
+    <marquee onmouseover="stop()" onmouseout="start()">
+    <h1 ><b> Welcome to REVA University</b></h1></marquee>
+</header>
+    
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://reva.edu.in/">Reva University </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="main">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Departments<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="cs">Computer</a></li>
+          <li><a href="is">Information Technology</a></li>
+          <li><a href="ec">Electronics </a></li>
+        </ul>
+      </li>
+      <li><a href="create">ADD RECORD</a></li>
+      <li class="active"><a href="records">VIEW RECORDS</a></li>
+    </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+<hr>
+<br>
+    
+  <center>
+    <a href="{% url 'stinsert' %}" class="b1">Add Students</a>
+    <table  class="content-table">
+      <thead>
+        <th>Student ID </th>
+        <th>Student Name </th>
+        <th>Student Email</th>
+        <th>Student Address</th>
+        <th> Student Mobile </th>
+        <th> Sudent Gender </th>
+      </thead>
+
+      {% for displaylist in crudst %}
+      <tbody>
+        <td>{{displaylist.id}}</td>
+        <td>{{displaylist.stname}}</td>
+        <td>{{displaylist.stemail}}</td>
+        <td>{{displaylist.staddress}}</td>
+        <td>{{displaylist.stmobile}}</td>
+        <td>{{displaylist.stgender}}</td>
+
+      </tbody>
+      {%endfor %}
+
+    </table>
+
+    
+    <hr>
+
+    <span class="glyphicon glyphicon-print"></span>
+    <span class="glyphicon glyphicon-envelope"></span>
+    </hr>
+
+    
+  </center>
+
+</body>
+</html>

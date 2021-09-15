@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <title>REVA University</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/images/revapng.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .b1{
+            background-color: #f580266e;
+            color:rgb(26, 126, 207);
+            font-family: sans-serif;
+            text-align: center;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: none;
+        }
+        
+        .a1{
+            padding-left: 10px;
+            font-size: 12px;
+            font-family: sans-serif;
+            color: rgb(26, 126, 207);
+        }
+        .b1:hover{
+            cursor: pointer;
+            background-color: cornsilk;
+            color: rgba(0, 0, 139, 0.603);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        header {
+            text-align: center;
+            background-color:rgba(255, 255, 255, 0.700);
+            padding: 15px;
+        }
+
+        header h1 {
+            padding-top: 5px;
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+            color:#f57f26;
+            padding-bottom: 10px;
+        }
+          
+        marquee { 
+            width:80% 
+        }
+        
+        header img{
+            padding-left: 5px;
+            float: left;
+        }
+
+        body{
+            background-image: url("{% static 'Images/abc.jpeg'%}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family:sans-serif;
+            background-color: #f1f1f1;
+            position: relative;
+            padding-bottom: 58px;
+            min-height: 100vh;
+        }
+
+        .adminblock{
+            border-radius: 10px;
+        }
+        .about{
+            font-weight: bold;
+            font-size: large;
+            color: #f57f26;
+        }
+        .container {
+            width: 71%;
+            margin: 50px auto;
+            padding: 5px;
+        }
+
+        .container .box {
+            width: 100%;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.699);
+            margin-top: 50px;
+            letter-spacing: 0.1em;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+            border-radius: 10px;
+            box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+        }
+
+        footer{
+            text-align: center;
+            color: #d1d3c8;
+            padding: 20px;
+            width: 100%;
+            position: absolute;
+            line-height: 1.6;
+            padding: 1rem;
+            background-color: #4a4d56;
+        }
+
+        footer img{
+            padding-top: 10px ;
+            
+        }
+
+        footer p{
+            padding-right: 5px;
+            text-align:right;
+        }
+
+    </style>
+  </head>
+
+<body>
+    <header>
+        <img src="{% static 'Images/reva.png'%}" alt="Logo" style="width:12%;">
+        <marquee onmouseover="stop()" onmouseout="start()"><h1><b> Welcome to REVA University</b></h1></marquee>
+    </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="https://reva.edu.in/">Reva University </a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Departments<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="cs">Computer</a></li>
+                <li><a href="is">Information Technology</a></li>
+                <li><a href="ec">Electronics </a></li>
+              </ul>
+            </li>
+            <li><a href="create">ADD RECORD</a></li>
+            <li><a href="records">VIEW RECORDS</a></li>
+          </ul>
+    
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    <br>
+    <div class="a1">
+    <h3>Welcome {{ member.firstname }}!</h3>
+    </div>
+    
+    <br>
+    
+    <center>    
+        <img class="adminblock" src="{% static 'Images/reva_admin.jpg'%}" alt="Poor Connection.." width="70%">
+    </center>
+
+    <div class="container">
+        <div class="box">
+            <p class="about">
+                About REVA
+            </p>
+
+            <br>
+            <p>
+                REVA University has been established under the REVA University Act, 2012. The University is located in Bengaluru on a sprawling green campus, spread over 45 acres of land, built with
+                    state-of-the-art infrastructure creating an environment conducive to higher learning and research.
+            </p>
+            
+            <br>
+            
+            <p>
+                The founder of REVA University believe in the motto 'Knowledge is Power'. Driven with a philanthropic vision and a missionary zeal, the campus is built to transform students into
+                outstanding citizens. The University prides itself in contributing to the holistic development of every student. The University currently offers 49 Undergraduate Programmes, 28 full-time 
+                Postgraduate Programmes, 2 part-time Postgraduate Programmes, Ph.D. Programmes in various disciplines and several Certificate/Diploma and Postgraduate Diploma Programmes in 
+                Engineering & Technology, Architecture, Science and Technology, Commerce, Management Studies, Law, Arts, Humanities & Social Sciences, and Performing Arts & Indic Studies. 
+                The programmes offered by REVA University are well planned and designed based on in-depth analysis and research with emphasis on knowledge assimilation, practical applications, 
+                hands-on training, global and industrial relevance, and social significance.
+            
+            </p>
+            
+            <br>
+            
+            <p>
+                REVA University believes in preparing students through the Choice Based Credit System (CBCS) and Continuous Assessment and Grading Pattern (CAGP) of education. The CBCS &
+                    CAGP pattern of education has been introduced in all programmes to facilitate students to opt for subjects of their choice in addition to the core subjects of the study and prepare them
+                    with required skills. It also provides opportunities for students to earn more credits and thereby acquire additional Proficiency Certificates and Diplomas.
+            </p>
+        </div>
+    </div>
+
+    <br>
+
+    <footer>
+        <center><img class= "img2" src="{% static 'Images/footer.png'%}" alt="footer" style="width:12%;"></center>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, project by <strong>K.S.Vighnesh</strong></p>
+    </footer>
+</body>

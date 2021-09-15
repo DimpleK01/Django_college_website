@@ -1,0 +1,154 @@
+<html lang="en">
+{% load static %}<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | Reva University</title>
+    <link rel="icon" href="/static/images/revapng.png">
+    <style>
+        body {
+            background: #f6f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            margin: -20px 0 50px;
+        }
+
+        .b1{
+            border-radius: 20px;
+            border: 1px solid #f57f26;
+            background-color: white;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 8px 40px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+        
+        .b1:hover{
+            background-color: cornsilk;
+            color: rgba(0, 0, 139, 0.603);
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+              box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .sign-in-container h1{
+            padding-bottom: 10px;
+            font-size: 22px;
+        }
+
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        button {
+            border-radius: 20px;
+            border: 1px solid #f57f26;
+            background-color: #f57f26;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        button:focus {
+            outline: none;
+        }
+        
+        button.ghost {
+            padding-top: 10px;
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+        
+        form {
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 80px;
+            height: 100%;
+            text-align: center;
+        }
+
+        input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        input::placeholder { 
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<img class= "img1" src="{% static 'Images/reva.png'%}" alt="img">
+<br>
+<div class="container" id="container">
+<div class="form-container sign-in-container">
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <h1>Log In</h1>
+        <br>
+        <div class="col-md-8">
+            <input type="text" name="username" placeholder="Username" required="required"/>
+            <input type="password" name="password" placeholder="Password" required="required"/>      
+            <center><label class="text-danger">{{ msg }}</label></center>
+            <br>
+                <button ><span class="glyphicon glyphicon-log-in"></span> Login</button>
+        </div>
+        <br>
+        <h1>New user?</h1>
+        <div class="b1">
+            <a href="{% url 'index' %}">Signup</a>
+        </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

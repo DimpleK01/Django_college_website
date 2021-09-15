@@ -1,0 +1,294 @@
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVA University | Department of Computer Science</title>
+    <link rel="icon" href="/static/images/revapng.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        td{
+            text-align: center;
+        }
+        th{
+            text-align: center;
+        }
+        .b1{
+            background-color: #f580266e;
+            opacity: 95%;
+            color:rgb(26, 126, 207);
+            font-family: sans-serif;
+            text-align: center;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: none;
+        }
+        
+        .b1:hover{
+            background-color: cornsilk;
+            color: rgba(0, 0, 139, 0.603);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        header {
+            text-align: center;
+            background-color:rgba(255, 255, 255, 0.700);
+            padding: 15px;
+        }
+
+        header h1 {
+            padding-top: 5px;
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+            color:#f57f26;
+            padding-bottom: 10px;
+        }
+          
+        marquee { 
+            width:80% 
+        }
+        
+        header img{
+            padding-left: 5px;
+            float: left;
+        }
+        .content-table{
+            text-align: center;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 800px;
+            min-height: 250px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .content-table thead tr{
+            background-color: #f58026e0;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td{
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type{
+            border-bottom: 2px solid #f58026e0;
+        }
+        
+        .u{
+            font-family: sans-serif;
+            color: rgb(136, 112, 112);
+        }
+
+        footer{
+            text-align: center;
+            color: #d1d3c8;
+            padding: 20px;
+            width: 100%;
+            position: absolute;
+            padding: 1rem;
+            background-color: #4a4d56;
+        }
+
+        footer img{
+            padding-top: 10px ;
+            
+        }
+
+        footer p{
+            padding-right: 5px;
+            text-align:right;
+        }
+
+    </style>
+</head>
+
+<body bgcolor="white">
+    <header>
+        <img src="{% static 'Images/revaheader.png'%}" alt="Poor Connection.." style="width:12%;">
+        <marquee onmouseover="stop()" onmouseout="start()">
+        <h1 ><b> Welcome to REVA University</b></h1></marquee>
+    </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="https://reva.edu.in/">Reva University </a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li ><a href="main">Home</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Departments<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class="active"><a href="cs">Computer</a></li>
+                  <li><a href="is">Information Technology</a></li>
+                  <li><a href="ec">Electronics </a></li>
+                </ul>
+              </li>
+              <li><a href="create">ADD RECORD</a></li>
+              <li><a href="records">VIEW RECORDS</a></li>
+            </ul>
+    
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    <br>
+    <center>
+        <br>
+        <h2 style="color: rgb(136, 112, 112);">Department of Computer Science </h2>
+        <br>
+        <h3 class="u"> DATABASE</h3>
+        <br>
+        <p> <b> Total Number of students : 600</b></p>            
+        <br>
+
+            <table class="content-table" >
+                <thead>
+                    <tr >
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Phone Number </th>
+                        <th>Semester</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mahesh M</td>
+                        <td>9968357854</td>
+                        <td>3</td>
+                        <td>R19CS122</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>A Rajesh</td>
+                        <td>8768352854</td>
+                        <td>2</td>
+                        <td>R20CS102</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>D Varshit</td>
+                        <td>8162257844</td>
+                        <td>5</td>
+                        <td>R18CS153</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Kartik K</td>
+                        <td>9268357878</td>
+                        <td>3</td>
+                        <td>R19CS172</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Rishabh R</td>
+                        <td>8968352856</td>
+                        <td>2</td>
+                        <td>R20CS307</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Hritik G</td>
+                        <td>77962257834</td>
+                        <td>5</td>
+                        <td>R18CS367</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Chetan S</td>
+                        <td>9468357891</td>
+                        <td>3</td>
+                        <td>R19CS382</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Rahul T</td>
+                        <td>9168352823</td>
+                        <td>2</td>
+                        <td>R20CS252</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Hruday M</td>
+                        <td>8862257834</td>
+                        <td>5</td>
+                        <td>R18CS268</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Manjunath R</td>
+                        <td>7768357865</td>
+                        <td>3</td>
+                        <td>R19CS129</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Abhinay D</td>
+                        <td>8168352811</td>
+                        <td>2</td>
+                        <td>R20CS112</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>G Abhiram</td>
+                        <td>8962257899</td>
+                        <td>5</td>
+                        <td>R18CS237</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>S Manohar M</td>
+                        <td>8768357832</td>
+                        <td>3</td>
+                        <td>R19CS142</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>R Jyothish</td>
+                        <td>9368352888</td>
+                        <td>2</td>
+                        <td>R20CS132</td>
+                    </tr>
+            
+                </tbody>
+            </table>
+
+            <br>
+
+            <footer>
+                <center><img class= "img2" src="{% static 'Images/footer.png'%}" alt="footer" style="width:12%;"></center>
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, project by <strong>K.S.Vighnesh</strong></p>
+            </footer>
+
+    </center>
+</body>
+
+</html>

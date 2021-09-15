@@ -1,0 +1,182 @@
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reva University | Database</title>
+    <link rel="icon" href="/static/images/revapng.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        td{
+            text-align: center;
+        }
+
+        input {
+            border-radius: 1px;
+            padding: 12px 15px;
+            margin: 8px 0;
+            text-align: center;
+        }
+
+        .b1{
+            font-weight: bold;
+            background-color: #f580266e;
+            color:rgb(26, 126, 207);
+            font-family: sans-serif;
+            text-align: center;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: none;
+        }
+        
+        .b1:hover{
+            background-color: cornsilk;
+            color: rgba(0, 0, 139, 0.603);
+        }
+
+        header {
+            text-align: center;
+            background-color:rgba(255, 255, 255, 0.700);
+        }
+
+        header h1 {
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+            color:#f57f26;
+        }
+          
+        marquee { 
+            width:80% 
+        }
+
+        header img{
+            padding-left: 5px;
+            float: left;
+        }
+        .content-table{
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 800px;
+            min-height: 250px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .content-table thead tr{
+            background-color: #f58026e0;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td{
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type{
+            border-bottom: 2px solid #f58026e0;
+        }
+        
+        input::placeholder { 
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/static/Images/revaheader.png" alt="Poor Connection.." style="width:12%;">
+        <marquee onmouseover="stop()" onmouseout="start()">
+        <h1 ><b> Welcome to REVA University</b></h1></marquee>
+    </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="https://reva.edu.in/">Reva University </a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="main">Home</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Departments<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="cs">Computer</a></li>
+                  <li><a href="is">Information Technology</a></li>
+                  <li><a href="ec">Electronics </a></li>
+                </ul>
+              </li>
+              <li class="active"><a href="#">ADD RECORD</a></li>
+              <li><a href="records">VIEW RECORDS</a></li>
+            </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    <hr>
+    <center>
+        <form method="POST">
+            {% csrf_token%}
+        <table class="content-table">
+
+            <tr>
+                <td>Student Name :</td>
+                <td><input type="text" placeholder="Enter name" name="stname"></td>
+            </tr>
+
+            <tr>
+                <td>Student Email :</td>
+                <td><input type="text" placeholder="Enter Email" name="stemail"></td>
+            </tr>
+
+            <tr>
+                <td>Student Address :</td>
+                <td><input type="text" placeholder="Enter Address" name="staddress"></td>
+            </tr>
+
+            <tr>
+                <td>Student Mobile :</td>
+                <td><input type="number" placeholder="&ensp; Enter Mobile" name="stmobile"></td>
+            </tr>
+
+            <tr>
+                <input type="radio" value="M" name="stgender" group="stgender"> MALE
+                <input type="radio" value="F" name="stgender" group="stgender"> FEMALE
+            </tr>
+        </table>
+            
+        <a href="{% url 'stdisplay' %}" ><button class="b1"> <input type="submit" value="INSERT RECORD" class="b1"> </button></a>
+
+        {% if message %}
+        {% for result in message%}
+        <b> {{result}} </b>
+        {%endfor %}
+
+        {% endif%}
+
+        </form>
+        
+
+    </center>
+
+</body>
+</html>
